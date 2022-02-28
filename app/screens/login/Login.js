@@ -16,26 +16,29 @@ export function LoginScreen({navigation}) {
     <>
       <StatusBar barStyle="dark-content"/>
       <SafeAreaView style={styles.container}>
-          <View style={styles.logo}>
-            <Image style={styles.logo} source={require('../../assets/skynote.png')} />
+          <View style={ styles.top } >
+              <Image style={styles.logo} source={require('../../assets/skynote.png')} />   
           </View>
 
-          <InputLogin 
-            onChangeEmail={setEmail} 
-            onChangePassword={setPassword} 
-          />
-
-          <View style={styles.button_password}>
-            <FlatButton text='Sign In' onPress={ () => signIn(email, password) }/>
-            <Text style={styles.forgotPassword} onPress={() => navigation.navigate('SignUp1')} >Forgot password? </Text>
+          <View style={ styles.middleTop } >
+              <InputLogin 
+                onChangeEmail={setEmail} 
+                onChangePassword={setPassword} 
+              />  
           </View>
-          <View style={styles.noAccount}>
-            <Text style={{color: Theme.COLORS.Gray}}>
-              Don't have an account?  
-              <Text style={{color: Theme.COLORS.White}}  onPress={() => navigation.navigate('SignUp1')} > Sign up here</Text>
-            </Text>
+
+          <View style={ styles.middleBottom } >
+              <FlatButton text='Sign In' onPress={ () => signIn(email, password) }/>
+              <Text style={styles.forgotPassword} onPress={() => navigation.navigate('SignUp1')} >Forgot password? </Text>  
+          </View>
+
+          <View style={ styles.bottom } >
+              <Text style={{color: Theme.COLORS.Gray}}>
+                  Don't have an account?  
+                  <Text style={{color: Theme.COLORS.White}}  onPress={() => navigation.navigate('SignUp1')} > Sign up here</Text>
+              </Text>
           </View>
       </SafeAreaView>
     </>
   );
-}
+};

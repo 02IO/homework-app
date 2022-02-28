@@ -2,7 +2,7 @@ import React from 'react';
 import { Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { SignUpScreen1, SignUpScreen2, SignUpScreen3 } from './app/screens/signup/SignUp'
+import { SignUpScreen1, SignUpScreen2, SignUpScreen3, SignUpScreen4 } from './app/screens/signup/SignUp'
 import { AuthContext } from './app/routes/Context.js';
 import AppStack from './app/routes/AppStack.js';
 import AuthStack from './app/routes/AuthStack.js';

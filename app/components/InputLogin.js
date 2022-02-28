@@ -27,13 +27,12 @@ export function InputLogin({ onChangeEmail, onChangePassword }) {
 
 const inputStyles = StyleSheet.create({
     inputView: {
-        marginTop: -250,
         width: '70%',
         alignItems: 'center',
     },
     
     input: {
-        width: '90%',
+        width: '100%',
         marginTop: '5%',
         borderRadius: 25,
         borderWidth: 1,

@@ -2,18 +2,14 @@ import React, { useState } from "react";
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import RNPickerSelect from "react-native-picker-select";
 
-export default function PickerTest({ text, onPress }) {
+export default function PickerTest({ itemList, placeholderTest }) {
     const [ school, setSchool ] = useState("");
     return (
         <View style={styles.container}>            
             <RNPickerSelect
-                placeholder={{ label: "Selecteer school...", value: null }}
+                placeholder={placeholderTest}
                 onValueChange={(school) => setSchool(school)}
-                items={[
-                    { label: "Regio College Zaandam", value: "RC" },
-                    { label: "Mediacollege Amsterdam", value: "MA" },
-                    { label: "Hogeschool van Amsterdam", value: "HVA" },
-                ]}
+                items={itemList}
                 style={styles}
             />
 

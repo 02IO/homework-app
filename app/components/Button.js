@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { color } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
 export default function FlatButton({ text, onPress }) {
     return (
@@ -16,8 +15,8 @@ export default function FlatButton({ text, onPress }) {
                 </LinearGradient>
             </View>
         </TouchableOpacity>
-    )
-}
+    );
+};
 
 const styles = StyleSheet.create({
     button: {
@@ -36,5 +35,4 @@ const styles = StyleSheet.create({
         color: '#fff',
         
     }
-
-})
+});
