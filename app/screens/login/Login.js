@@ -29,7 +29,7 @@ export function LoginScreen({navigation}) {
 
           <View style={ styles.middleBottom } >
               <FlatButton text='Sign In' onPress={ () => signIn(email, password) }/>
-              <Text style={styles.forgotPassword} onPress={() => navigation.navigate('SignUp1')} >Forgot password? </Text>  
+              <Text style={styles.forgotPassword} onPress={() => navigation.navigate('FlashCards')} >Forgot password? </Text>  
           </View>
 
           <View style={ styles.bottom } >
