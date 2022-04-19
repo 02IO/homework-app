@@ -13,7 +13,7 @@ export function FlashCardScreen({ navigation }) {
         <StatusBar barStyle="dark-content"/>
         <SafeAreaView style={[styles.container, { flexDirection: "column" }]}>
             <View style={ styles.top } >
-                <Image style={ styles.hamburger } source={require('../../assets/icons/hamburger_menu.png')} />
+                <Image style={styles.hamburgerStyle} source={ Icons.hamburger_menu_icon } />
 
                 <View style={ styles.scoreTracker }>
                     <Text style={ styles.scoreText }>
@@ -27,8 +27,6 @@ export function FlashCardScreen({ navigation }) {
 
             <View style={ styles.bottom }>
                 <FlashCard/>
-
-                    
             </View>
 
         </SafeAreaView>

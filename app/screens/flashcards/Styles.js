@@ -31,12 +31,10 @@ const styles = StyleSheet.create({
         marginLeft: '7%',
     },
 
-    hamburger: {
-        resizeMode: 'contain',
-        width: '16%',
-        height: '16%',
-        marginBottom: '30%',
-        marginRight: '80%',
+    hamburgerStyle: {
+        width: 30,
+        height: 30,
+        alignSelf: 'flex-start',
     },
 
     scoreTracker: {
@@ -54,10 +52,10 @@ const styles = StyleSheet.create({
     },
 
     top: {
-        flex: 1,
+        flex: 0.8,
         //backgroundColor: 'red',
-        //justifyContent: 'center',
-        //alignItems: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 
     middle: {

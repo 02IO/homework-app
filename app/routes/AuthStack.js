@@ -6,15 +6,15 @@ import { FlashCardScreen } from '../screens/flashcards/Flashcards.js';
 
 const Stack = createNativeStackNavigator();
 
-export default function AuthStack() {
+export default function AuthStack({ navigation }) {
     return (
       <Stack.Navigator>
-        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="SignUp1" component={SignUpScreen1} options={{ headerShown: false }} />
-        <Stack.Screen name="SignUp2" component={SignUpScreen2} options={{ headerShown: false }} />
-        <Stack.Screen name="SignUp3" component={SignUpScreen3} options={{ headerShown: false }} />
-        <Stack.Screen name="SignUp4" component={SignUpScreen4} options={{ headerShown: false }} />
-        <Stack.Screen name="FlashCards" component={FlashCardScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="SignUp1" component={SignUpScreen1} options={{ headerShown: false }} />
+          <Stack.Screen name="SignUp2" component={SignUpScreen2} options={{ headerShown: false }} />
+          <Stack.Screen name="SignUp3" component={SignUpScreen3} options={{ headerShown: false }} />
+          <Stack.Screen name="SignUp4" component={SignUpScreen4} options={{ headerShown: false }} />
+          <Stack.Screen name="FlashCards" component={FlashCardScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     );
 };

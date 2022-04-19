@@ -3,12 +3,12 @@ import { Text, View, StatusBar, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './Styles';
 import { InputLogin } from '../../components/InputLogin.js';
-import { AuthContext } from "../../routes/Context.js";
+import { useAuth } from '../../routes/AuthContextData';
 import FlatButton from '../../components/Button.js';
 import Theme from '../../constants/Theme';
 
 export function LoginScreen({navigation}) {
-    const { signIn } = React.useContext(AuthContext);
+    const { signIn} = useAuth();
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
 

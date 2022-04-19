@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import Theme from '../constants/Theme';
 
 function TopicIcon({ title, topic, link, navigation, props}) {
   return (
@@ -26,22 +27,15 @@ const styles = StyleSheet.create({
   big_rect: {
     width: 198,
     height: 139,
-    backgroundColor: '#2864fa',
+    backgroundColor: Theme.COLORS.Slate,
     borderRadius: 20,
-    shadowColor: "rgba(28,29,37,1)",
-    shadowOffset: {
-      width: 5,
-      height: 5
-    },
     elevation: 5,
-    shadowOpacity: 1,
-    shadowRadius: 0
   },
   small_rect: {
     width: 150,
     height: 103,
-    backgroundColor: "#2864fa",
-    borderRadius: 12
+    backgroundColor: Theme.COLORS.Slate,
+    borderRadius: 20
   },
 
   title_style: {

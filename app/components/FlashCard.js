@@ -1,188 +1,127 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Theme from '../constants/Theme';
 import { AppRegistry, StyleSheet, Text, View, TouchableOpacity, Animated } from 'react-native';
+import FlipCard from 'react-native-flip-card';
 
-export default class FlashCard extends Component {
-  UNSAFE_componentWillMount() {
-    this.animatedValue = new Animated.Value(0);
-    this.value = 0;
-    this.animatedValue.addListener(({ value }) => {
-      this.value = value;
-    })
-    this.frontInterpolate = this.animatedValue.interpolate({
-      inputRange: [0, 180],
-      outputRange: ['0deg', '180deg'],
-    })
-    this.backInterpolate = this.animatedValue.interpolate({
-      inputRange: [0, 180],
-      outputRange: ['180deg', '360deg']
-    })
-    this.frontOpacity = this.animatedValue.interpolate({
-      inputRange: [89, 90],
-      outputRange: [1, 0]
-    })
-    this.backOpacity = this.animatedValue.interpolate({
-      inputRange: [89, 90],
-      outputRange: [0, 1]
-    })
-  }
-
-  flipCard() {
-    if (this.value >= 90) {
-      Animated.spring(this.animatedValue,{
-        toValue: 0,
-        friction: 8,
-        tension: 10
-      }).start();
-    } else {
-      Animated.spring(this.animatedValue,{
-        toValue: 180,
-        friction: 8,
-        tension: 10
-      }).start();
-    }
-  }
-
-  render() {
-    const frontAnimatedStyle = {
-      transform: [
-        { rotateY: this.frontInterpolate }
-      ]
-    }
-    const backAnimatedStyle = {
-      transform: [
-        { rotateY: this.backInterpolate }
-      ]
-    }
-
+export default function FlashCard(){
     return (
-        <View style={styles.container}>
-            <View>
-            <TouchableOpacity onPress={() => this.flipCard()}>
-                <Animated.View style={[styles.flipCard, frontAnimatedStyle, {opacity: this.frontOpacity}]}>
-                    <View style={ styles.card }>
-                    <View style={ styles.bottomUp }>
-                        <Text style={ styles.title }>
-                        Variables
-                        </Text>
+        <FlipCard style={styles.card} flipHorizontal={false} clickable={true} onFlipEnd={(isFlipEnd)=>{console.log('isFlipEnd', isFlipEnd)}} >
+          {/* Face Side */}
+          <View style={styles.face}>
 
-                        <Text style={ styles.h2 }>
-                        /ˈvɛːrɪəb(ə)l/
-                        </Text>
+            <View style={ styles.bottomUp }>
+                <Text style={ styles.title }>
+                    Variables
+                </Text>
 
-                        <Text style={ styles.h2 }>
-                        What is a variable?
-                        </Text>
-                    </View>
+                <Text style={ styles.h2 }>
+                    /ˈvɛːrɪəb(ə)l/
+                </Text>
 
-                    <View style={ styles.bottomDown }>
-                        <Text style={ styles.h2 }>
-                        Flip for answer
-                        </Text>
-                    </View>
-                    </View>
-                </Animated.View>
-
-                <Animated.View style={[styles.flipCard, styles.flipCardBack, backAnimatedStyle, {opacity: this.backOpacity}]}>
-                <View style={ styles.card }>
-                    <View style={ styles.bottomUp }>
-                        <Text style={ styles.title }>
-                        Variables
-                        </Text>
-
-                        <Text style={ styles.h2 }>
-                        /ˈvɛːrɪəb(ə)l/
-                        </Text>
-
-                        <Text style={ styles.h2 }>
-                        What is a variable?
-                        </Text>
-                    </View>
-
-
-                    <View style={ styles.bottomDown }>
-                        <Text style={ styles.h2 }>
-                        Very hard | Hard | Easy | Very easy
-                        </Text>
-                    </View>
-                    </View>
-                </Animated.View>
-
-            </TouchableOpacity>
+                <Text style={ styles.h2 }>
+                    What is a variable?
+                </Text>
             </View>
-        </View>
+
+            <View style={ styles.bottomMid }>
+            </View>
+
+            <View style={ styles.bottomDown }>
+                <Text style={ styles.h2 }>
+                    Flip for answer
+                </Text>
+                    
+            </View>
+          </View>
+          {/* Back Side */}
+          <View style={styles.back}>
+              
+            <View style={ styles.bottomUp }>
+                <Text style={ styles.title }>
+                    Variables
+                </Text>
+
+                <Text style={ styles.h2 }>
+                    /ˈvɛːrɪəb(ə)l/
+                </Text>
+
+                <Text style={ styles.h2 }>
+                    What is a variable?
+                </Text>
+            </View>
+
+            <View style={ styles.bottomMid }>
+            </View>
+
+            <View style={ styles.bottomDown }>
+                <Text style={ styles.h2 }>
+                    A variable.A variable.
+                </Text>
+                    
+            </View>
+          </View>
+        </FlipCard>
     );
-}
 }
 
 const styles = StyleSheet.create({
-  container: {
+  // container: {
+  //   flex: 1,
+  //   alignItems: "center",
+  //   justifyContent: "center",
+  // },
+
+  card: {
+    borderRadius: 40,
+    backgroundColor: Theme.COLORS.Slate,
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    width: '850%',
+    //height: '100%',
   },
 
-  card: {
-      borderRadius: 40,
-      backgroundColor: Theme.COLORS.Slate,
-      width: '180%',
-      //height: '100%',
-  },
-
-  flipCard: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    backfaceVisibility: 'hidden',
-    
-  },
-  flipCardBack: {
-    position: "absolute",
-    top: 0,
-  },
-
-flipText: {
+  flipText: {
     width: 90,
     fontSize: 20,
     color: 'white',
     fontWeight: 'bold',
-    },
+  },
 
   baseText: {
     color: '#fff',
     fontFamily: 'System',
-},
+  },
 
-title: {
+  title: {
     color: '#fff',
     fontFamily: 'System',
     fontWeight: 'bold',
     fontSize: 40,
     marginTop: '15%',
     marginLeft: '5%',
-},
+  },
 
-h2: {
+  h2: {
     color: '#fff',
     fontFamily: 'System',
     marginTop: '4%',
     fontSize: 15,
     marginLeft: '7%',
-},
+  },
 
+  bottomUp: {
+    flex: 0.5,
+  },
 
-bottomUp: {
-    
+  bottomMid: {
+    flex: 0.2,
+  },
 
-},
+  bottomDown: {
+    flex: 0.3,
+  },
 
-bottomMid: {
-    padding: 10,
-},
-
-bottomDown: {
-    marginTop: 200,
-
-},
 });
 
 AppRegistry.registerComponent('animatedbasic', () => animatedbasic);
