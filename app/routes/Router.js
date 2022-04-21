@@ -4,7 +4,6 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useAuth } from './AuthContextData.js';
 import AppStack from './AppStack';
 import AuthStack from './AuthStack';
-import DrawerNavigator from '../navigation/Drawer.js';
 
 export function Router({ navigation }) {
     const {userData, loading} = useAuth();
@@ -16,8 +15,8 @@ export function Router({ navigation }) {
     return (
         <SafeAreaProvider>
             <NavigationContainer>
-                {userData?  <DrawerNavigator/> : <AuthStack/> }
+                {userData?  <AppStack/> : <AuthStack/> }
             </NavigationContainer>
         </SafeAreaProvider>
     );
-};
+}

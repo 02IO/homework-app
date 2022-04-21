@@ -1,49 +1,11 @@
 import React from 'react';
 import { StyleSheet, Image, View, TouchableOpacity, Text } from 'react-native';
-import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
-import Tabs from './Tabs.js';
-import Icons from '../constants/Icons';
+import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 import Images from '../constants/Images';
 import Theme from '../constants/Theme';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const Drawer = createDrawerNavigator();
-
-export default function DrawerNavigator({ navigation }) {
-    return (
-        <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />}
-            screenOptions={{
-                headerShown: false,
-                drawerActiveBackgroundColor: '#aa18ea',
-                drawerActiveTintColor: '#fff',
-                drawerInactiveTintColor: '#333',
-                drawerLabelStyle: { marginLeft: -25, fontFamily: 'System', fontSize: 15, },
-            }}>
-            <Drawer.Screen
-                name="Home"
-                component={Tabs}
-                options={{ drawerIcon: ({color}) => ( <Ionicons name="home-outline" size={22} color={color}/> ) }}
-            />
-            <Drawer.Screen
-                name="Profile"
-                component={Tabs}
-                options={{ drawerIcon: ({color}) => ( <Ionicons name="person-outline" size={22} color={color}/> ) }}
-            />
-            <Drawer.Screen
-                name="Settings"
-                component={Tabs}
-                options={{ drawerIcon: ({color}) => ( <Ionicons name="chatbox-ellipses-outline" size={22} color={color}/> ) }}
-            />
-            <Drawer.Screen
-                name="Moments"
-                component={Tabs}
-                options={{ drawerIcon: ({color}) => ( <Ionicons name="timer-outline" size={22} color={color}/> ) }}
-            />
-        </Drawer.Navigator>
-    );
-}
-
-function CustomDrawer( props ) {
+export default function CustomDrawer( props ) {
     return (
         <View style={styles.container}>
             <DrawerContentScrollView {...props} contentContainerStyle={{backgroundColor: Theme.COLORS.Background }} >
@@ -101,6 +63,6 @@ const styles = StyleSheet.create({
     
     profileStyle: {
         marginLeft: '5%',
-    }
+    },
 
 });

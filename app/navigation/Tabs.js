@@ -3,7 +3,7 @@ import { StyleSheet, Image} from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { HomePage } from '../screens/home/Home.js';
 import { SearchPage } from '../screens/search/Search.js';
-import { FlashCardScreen } from '../screens/flashcards/Flashcards.js';
+import { FlashcardScreen } from '../screens/flashcards/FlashcardScreen.js';
 import Icons from '../constants/Icons';
 import Theme from '../constants/Theme';
 
@@ -48,7 +48,7 @@ export default function Tabs({ navigation }) {
         />
         <Tab.Screen
             name="Flashcards"
-            component={FlashCardScreen}
+            component={FlashcardScreen}
         />
     </Tab.Navigator>
 )}

@@ -19,16 +19,15 @@ const styles = StyleSheet.create({
         fontFamily: 'System',
         fontWeight: 'bold',
         fontSize: 40,
-        marginTop: '15%',
-        marginLeft: '5%',
     },
 
     h2: {
         color: '#fff',
         fontFamily: 'System',
-        marginTop: '4%',
-        fontSize: 15,
-        marginLeft: '7%',
+        fontWeight: '600',
+        fontSize: 20,
+        justifyContent: 'center', 
+        alignSelf: 'flex-start',
     },
 
     hamburgerStyle: {
@@ -38,9 +37,7 @@ const styles = StyleSheet.create({
     },
 
     scoreTracker: {
-
-        marginLeft: '50%',
-        position: 'absolute',
+        alignSelf: 'flex-end',
     },
     
     scoreText: {
@@ -58,40 +55,40 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 
-    middle: {
-        flex: 0.25,
-        //backgroundColor: 'orange',
-        //justifyContent: 'center',
+    topBottom: {
+        flex: 0.6,
+        //backgroundColor: 'blue',
+        justifyContent: 'center',
         alignItems: 'center',
     },
 
-    bottom: {
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-
+    middleTop: {
+        flex: 1.2,
+        //backgroundColor: 'orange',
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        width: '100%',
     },
 
-    // bottomUp: {
-    //     flex: 1,
-    //     backgroundColor: Theme.COLORS.Slate,
-    //     borderTopLeftRadius: 40,
-    //     borderTopRightRadius: 40,
+    middle: {
+        flex: 0.6,
+        //backgroundColor: 'purple',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    // middleBottom: {
+    //     flex: 2.5,
+    //     backgroundColor: 'pink',
+    //     alignItems: 'center',
     // },
 
-    // bottomMid: {
-    //     flex: 1,
-    //     backgroundColor: Theme.COLORS.Slate,
-        
-    // },
-
-    // bottomDown: {
-    //     flex: 0.5,
-    //     backgroundColor: Theme.COLORS.Slate,
-    //     borderBottomLeftRadius: 40,
-    //     borderBottomRightRadius: 40,
-
-    // },
+    bottom: {
+        flex: 6,
+        //backgroundColor: 'green',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
     
 });
 

@@ -7,6 +7,9 @@ export const hamburger_icon = require('../assets/icons/hamburger.png');
 export const hamburger_left_icon = require('../assets/icons/hamburger_left.png');
 export const hamburger2_icon = require('../assets/icons/hamburger2.png');
 export const hamburger_menu_icon = require('../assets/icons/hamburger_menu.png');
+export const arrow_white_icon = require('../assets/icons/arrow_white.png');
+export const arrow_grey_icon = require('../assets/icons/arrow_grey.png');
+
 
 export default {
     notification_icon,
@@ -18,4 +21,6 @@ export default {
     hamburger_left_icon,
     hamburger2_icon,
     hamburger_menu_icon,
+    arrow_white_icon,
+    arrow_grey_icon, 
 }
